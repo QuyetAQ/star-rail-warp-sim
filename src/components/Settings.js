@@ -44,7 +44,7 @@ const Settings = ({
     "../assets/audio/sfx/menu-button-select.mp3"
   );
 
-  const [playPageOpen] = useSound("../assets/audio/sfx/page-open.mp3");
+  // const [playPageOpen] = useSound("../assets/audio/sfx/page-open.mp3");
 
   const [showReset, setShowReset] = useState(false);
 
@@ -249,7 +249,7 @@ const Settings = ({
               }}
             />
           </div>
-          <div
+          {/* <div
             style={{
               display: "flex",
               flexDirection: "row",
@@ -290,27 +290,10 @@ const Settings = ({
                 }}
               />
             </a>
-            <a
-              href="https://ko-fi.com/mikeli0623"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <LazyLoadImage
-                effect="opacity"
-                alt="Support Button"
-                className="menu-button"
-                src={`assets/menu/${i18n.resolvedLanguage}/panhandling.webp`}
-                draggable="false"
-                width={getWidth(114, 50)}
-                onClick={() => {
-                  if (sound) {
-                    playButtonSelect();
-                    playPageOpen();
-                  }
-                }}
-              />
-            </a>
-          </div>
+            <div
+              style={{ width: getWidth(114, 50), height: getWidth(114, 50) }}
+            />
+          </div> */}
         </Offcanvas.Body>
       </Offcanvas>
     </React.Fragment>

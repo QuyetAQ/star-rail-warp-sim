@@ -74,8 +74,8 @@ export default function DetailsMain({ setContent, bannerType, history }) {
         className="position-relative overflow-hidden"
         style={{
           backgroundColor: "#f1f1f1",
-          width: "70vw",
-          height: "70vh",
+          width: "90vw",
+          height: "90vh",
           fontSize: getWidth(28, 14),
         }}
       >
@@ -108,7 +108,7 @@ export default function DetailsMain({ setContent, bannerType, history }) {
             isActive={detailType === "records"}
           />
         </nav>
-        <Scrollbars style={{ height: "82%" }}>
+        <Scrollbars style={{ height: "88%" }}>
           {detailType === "details" && (
             <DetailsContent
               vers={vers}

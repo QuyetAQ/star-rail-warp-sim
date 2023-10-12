@@ -3,6 +3,11 @@
     "title": "跃迁"
   },
   "modal": {
+    "update": {
+      "header": "通知",
+      "body": "新版本上线，请按按钮更新！",
+      "footer": "更新"
+    },
     "lang": { "title": "选择语言" },
     "reset": {
       "title": "重置数据",

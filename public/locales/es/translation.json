@@ -3,6 +3,11 @@
     "title": "Salto"
   },
   "modal": {
+    "update": {
+      "header": "Notificación",
+      "body": "Nueva versión disponible, presione el botón para actualizar!",
+      "footer": "Actualizar"
+    },
     "lang": { "title": "Elige tu idioma" },
     "reset": {
       "title": "Reiniciar datos",

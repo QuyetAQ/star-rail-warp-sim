@@ -3,6 +3,11 @@
     "title": "Warp"
   },
   "modal": {
+    "update": {
+      "header": "Pemberitahuan",
+      "body": "Versi baru tersedia, tekan tombol untuk memperbarui!",
+      "footer": "Memperbarui"
+    },
     "lang": { "title": "Pilih bahasamu" },
     "reset": {
       "title": "Setel ulang data",

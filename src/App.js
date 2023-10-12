@@ -15,6 +15,8 @@ import { usePageVisibility } from "react-page-visibility";
 import DetailsMain from "./components/details/DetailsMain";
 import StatsMain from "./components/stats/StatsMain";
 import useBGM from "./components/hooks/useBGM";
+import { useServiceWorker } from "./useServiceWorker";
+import UpdateModal from './components/modals/UpdateModal';
 
 function App() {
   const [content, setContent] = useState("main");
@@ -23,8 +25,8 @@ function App() {
     sessionStorage.getItem("bannerType")
       ? sessionStorage.getItem("bannerType")
       : parseInt(localStorage.getItem("totalBeginner")) === 5
-      ? "char"
-      : "beginner"
+        ? "char"
+        : "beginner"
   );
 
   const [currentWarp, setCurrentWarp] = useState([]);
@@ -297,9 +299,19 @@ function App() {
 }
 
 export default function WrappedApp() {
+  const { waitingWorker, showReload, reloadPage } = useServiceWorker();
+  const [showUpdate, setShowUpdate] = useState(false);
+
+  useEffect(() => {
+    if (showReload && waitingWorker) {
+      setShowUpdate(true);
+    }
+  }, [waitingWorker, showReload, reloadPage]);
+
   return (
     <Suspense fallback={<Loading />}>
       <App />
+      <UpdateModal show={showUpdate} setShow={setShowUpdate} />
     </Suspense>
   );
 }

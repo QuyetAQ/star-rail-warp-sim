@@ -3,6 +3,11 @@
     "title": "Saut hyperespace"
   },
   "modal": {
+    "update": {
+      "header": "Notification",
+      "body": "Nouvelle version disponible, appuyez sur le bouton pour mettre à jour !",
+      "footer": "Mise à jour"
+    },
     "lang": { "title": "Choisissez votre langue" },
     "reset": {
       "title": "Réinitialiser les données",

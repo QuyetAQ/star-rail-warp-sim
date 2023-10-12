@@ -3,6 +3,11 @@
     "title": "Bước Nhảy"
   },
   "modal": {
+    "update": {
+      "header": "Thông báo",
+      "body": "Đã có phiên bản mới, nhấn nút để cập nhật!",
+      "footer": "Cập nhật"
+    },
     "lang": { "title": "Chọn ngôn ngữ của bạn" },
     "reset": {
       "title": "Đặt lại dữ liệu",

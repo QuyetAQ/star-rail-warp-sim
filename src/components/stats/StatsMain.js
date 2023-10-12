@@ -90,8 +90,8 @@ export default function StatsMain({
         className="position-relative overflow-hidden stat-main"
         style={{
           backgroundColor: "#f1f1f1",
-          width: "70vw",
-          height: "75vh",
+          width: "80vw",
+          height: "70vh",
           fontSize: getWidth(28, 14),
         }}
       >

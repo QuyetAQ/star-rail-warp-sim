@@ -3,6 +3,11 @@
     "title": "Warp"
   },
   "modal": {
+    "update": {
+      "header": "Benachrichtigung",
+      "body": "Neue Version verfügbar, zum Aktualisieren die Taste drücken!",
+      "footer": "Aktualisieren"
+    },
     "lang": { "title": "Wähle deine Sprache" },
     "reset": {
       "title": "Daten zurücksetzen",

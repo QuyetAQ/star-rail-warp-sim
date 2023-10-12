@@ -253,11 +253,10 @@ export default function Main({
       id="main-back"
       style={{
         backgroundImage: `url(/assets/banner/${getBack()}-back.webp)`,
-        backgroundColor: `${
-          bannerType === "beginner"
-            ? "#1f2322"
-            : bannerBackColor[vers][bannerType]
-        }`,
+        backgroundColor: `${bannerType === "beginner"
+          ? "#1f2322"
+          : bannerBackColor[vers][bannerType]
+          }`,
       }}
     >
       <Settings
@@ -371,10 +370,10 @@ export default function Main({
               bannerType === "beginner"
                 ? {}
                 : {
-                    transform: `translate(-50%, 500%)`,
-                    opacity: 0,
-                    transition: { duration: 0.3 },
-                  }
+                  transform: `translate(-50%, 500%)`,
+                  opacity: 0,
+                  transition: { duration: 0.3 },
+                }
             }
             animate={{
               transform: "translate(-50%,-50%)",
@@ -385,10 +384,10 @@ export default function Main({
               bannerType === "beginner"
                 ? { opacity: 0 }
                 : {
-                    transform: `translate(-50%, -500%)`,
-                    opacity: 0,
-                    transition: { duration: 0.3 },
-                  }
+                  transform: `translate(-50%, -500%)`,
+                  opacity: 0,
+                  transition: { duration: 0.3 },
+                }
             }
           >
             {currentBanners[bannerType]}
@@ -421,6 +420,25 @@ export default function Main({
           content={t("button.view-details")}
         />
         <WarpButtons onWarp={handleWarp} event={bannerType} />
+      </div>
+      <div
+        id="teams"
+        style={{
+          fontSize: getWidth(36, 12),
+          height: getWidth(24, 11),
+          textAlign: "left",
+          marginTop: `-6px`,
+        }}
+      >
+        <a
+          href="https://play.google.com/store/apps/developer?id=1Studio"
+          title="1Studio"
+          target="_blank"
+          rel="noreferrer"
+          style={{ color: '#dcc491' }}
+        >
+          1Studio
+        </a>
       </div>
     </motion.section>
   );

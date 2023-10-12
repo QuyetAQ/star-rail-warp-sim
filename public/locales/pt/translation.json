@@ -3,6 +3,11 @@
     "title": "Salto Hiperespacial"
   },
   "modal": {
+    "update": {
+      "header": "Notificação",
+      "body": "Nova versão disponível, pressione o botão para atualizar!",
+      "footer": "Atualizar"
+    },
     "lang": { "title": "Escolha seu idioma" },
     "reset": {
       "title": "Redefinir dados",
