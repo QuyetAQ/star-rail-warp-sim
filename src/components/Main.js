@@ -440,7 +440,8 @@ export default function Main({
           marginTop: `-6px`,
         }}
       >
-        <a
+        1Studio
+        {/* <a
           href="https://play.google.com/store/apps/developer?id=1Studio"
           title="1Studio"
           target="_blank"
@@ -448,7 +449,7 @@ export default function Main({
           style={{ color: '#dcc491' }}
         >
           1Studio
-        </a>
+        </a> */}
       </div>
     </motion.section>
   );
