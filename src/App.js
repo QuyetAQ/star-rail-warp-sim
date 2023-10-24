@@ -17,6 +17,7 @@ import StatsMain from "./components/stats/StatsMain";
 import useBGM from "./components/hooks/useBGM";
 import { useServiceWorker } from "./useServiceWorker";
 import UpdateModal from './components/modals/UpdateModal';
+import StartModal from "./components/modals/StartModal";
 
 function App() {
   const [content, setContent] = useState("main");
@@ -213,11 +214,15 @@ function App() {
     standard: JSON.parse(localStorage.getItem("standHistory")) || [],
   });
 
+  const [showStart, setShowStart] = useState(false);
+
   return (
     <ResizeProvider value={resizeValue}>
       <SoundProvider value={soundValue}>
         {soundComponent}
         <div className="App">
+          <StartModal show={showStart} setShow={setShowStart} />
+
           <AnimatePresence>
             {content === "main" && (
               <Main
@@ -235,6 +240,7 @@ function App() {
                 setDBType={setDBType}
                 history={history}
                 setHistory={setHistory}
+                showStart={showStart}
                 bgm={[track, handleTrack]}
               />
             )}
