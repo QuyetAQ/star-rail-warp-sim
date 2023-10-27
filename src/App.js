@@ -18,6 +18,7 @@ import useBGM from "./components/hooks/useBGM";
 import { useServiceWorker } from "./useServiceWorker";
 import UpdateModal from './components/modals/UpdateModal';
 import StartModal from "./components/modals/StartModal";
+import { BGM } from "./util/Constants";
 
 function App() {
   const [content, setContent] = useState("main");
@@ -81,6 +82,13 @@ function App() {
     localStorage.getItem("bgm") ? JSON.parse(localStorage.getItem("bgm")) : true
   );
 
+  const randBGM = () => {
+    let keys = Object.keys(BGM);
+    let album = keys[(keys.length * Math.random()) << 0];
+    let tracks = BGM[album];
+    return album + "-" + tracks[Math.floor(Math.random() * tracks.length)];
+  };
+
   const {
     BGMVolume,
     setBGMVolume,
@@ -90,7 +98,7 @@ function App() {
     loaded,
     setLoaded,
     soundComponent,
-  } = useBGM("ooc-timeline", "./assets/audio/bgm/");
+  } = useBGM(randBGM(), "./assets/audio/bgm/");
 
   useEffect(() => {
     if (sound && soundEnabled) setMuted(false);
@@ -222,7 +230,6 @@ function App() {
         {soundComponent}
         <div className="App">
           <StartModal show={showStart} setShow={setShowStart} />
-
           <AnimatePresence>
             {content === "main" && (
               <Main
@@ -247,7 +254,9 @@ function App() {
             {content === "video" && (
               <WarpVideo
                 rarity={hasFive ? "five" : hasFour ? "four" : "three"}
-                event={bannerType === "char" || bannerType === "weap"}
+                event={
+                  bannerType.includes("char") || bannerType.includes("weap")
+                }
                 onEnded={() => {
                   setContent("single");
                 }}
@@ -285,7 +294,15 @@ function App() {
               <DetailsMain
                 setContent={setContent}
                 bannerType={bannerType}
-                history={history[bannerType]}
+                history={
+                  history[
+                    bannerType.includes("rerun")
+                      ? bannerType.includes("char")
+                        ? "char"
+                        : "weap"
+                      : bannerType
+                  ]
+                }
               />
             )}
             {content === "stats" && (
