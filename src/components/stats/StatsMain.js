@@ -20,7 +20,7 @@ export default function StatsMain({
   bannerState,
   setBannerState,
 }) {
-  const { getWidth, getHeight } = useContext(ResizeContext);
+  const { getWidth } = useContext(ResizeContext);
   const { t } = useTranslation();
 
   const { sound, useSound } = useContext(SoundContext);
@@ -81,7 +81,7 @@ export default function StatsMain({
       />
       <div
         className="stat-nav"
-        style={{ height: getHeight(500, 300, 200), width: getWidth(300) }}
+        // style={{ height: getHeight(500, 300, 200), width: getWidth(300) }}
       >
         <MiniBanners bannerType={bannerType} setBannerType={setBannerType} />
         {/* <ScrollProgress
