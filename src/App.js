@@ -23,7 +23,7 @@ import { BGM } from "./util/Constants";
 function App() {
   const [content, setContent] = useState("main");
 
-  const [showStart, setShowStart] = useState(true);
+  const [showStart, setShowStart] = useState(false);
 
   const [bannerType, setBannerType] = useState(
     sessionStorage.getItem("bannerType")
