@@ -23,6 +23,8 @@ import { BGM } from "./util/Constants";
 function App() {
   const [content, setContent] = useState("main");
 
+  const [showStart, setShowStart] = useState(true);
+
   const [bannerType, setBannerType] = useState(
     sessionStorage.getItem("bannerType")
       ? sessionStorage.getItem("bannerType")
@@ -223,8 +225,6 @@ function App() {
     weap: JSON.parse(localStorage.getItem("weapHistory")) || [],
     standard: JSON.parse(localStorage.getItem("standHistory")) || [],
   });
-
-  const [showStart, setShowStart] = useState(false);
 
   return (
     <ResizeProvider value={resizeValue}>
